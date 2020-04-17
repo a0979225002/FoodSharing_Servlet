@@ -1,5 +1,6 @@
 package tw.org.iii.lipin.foodsharing;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import utils.JDBCUtils;
 
@@ -24,6 +25,9 @@ public class Sql_Inset_into extends HttpServlet {
         String account = request.getParameter("account");
         String passwd  = request.getParameter("passwd");
         String realname  = request.getParameter("realname");
+
+
+        passwd = DigestUtils.md5Hex(passwd);
 
 
         String sql = "insert into just(account,passed,realname) value (?,?,?)";
