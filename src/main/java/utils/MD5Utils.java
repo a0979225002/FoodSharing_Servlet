@@ -3,7 +3,7 @@ package utils;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class MD5Utils {
-    public final static String md5key = "(md5)";
+    public final static String md5key = "md5";
     private static boolean md5Verify;
 
     /**
@@ -14,7 +14,7 @@ public class MD5Utils {
      */
     public static String md5(String passwd,String md5key){
 
-        String md5passwd = DigestUtils.md5Hex(md5key+passwd);
+        String md5passwd = DigestUtils.md5Hex(passwd+md5key);
 
         return md5passwd;
     }

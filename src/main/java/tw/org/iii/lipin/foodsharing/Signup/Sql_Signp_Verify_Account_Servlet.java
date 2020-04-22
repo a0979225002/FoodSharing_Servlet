@@ -19,15 +19,15 @@ public class Sql_Signp_Verify_Account_Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String account = request.getParameter("account");
-        String phone = request.getParameter("phone");
 
         String sql ="select count(*) " +
                     "from user " +
-                    "where (account=? or phone=?)";
+                    "where (account=?)";
 
-        long count =  template.queryForObject(sql,Long.class);
+        long count =  template.queryForObject(sql,Long.class,account);
 
         out.println(count);
+        System.out.println(account);
 
     }
 

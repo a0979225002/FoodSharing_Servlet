@@ -25,10 +25,9 @@ public class Sql_Signup_Servlet extends HttpServlet {
         Date date = null;
 
         String account = request.getParameter("account");
-        String password = request.getParameter("passeord");
+        String password = request.getParameter("password");
         String phone = request.getParameter("phone");
-        String createtime = request.getParameter("createtime");
-
+        String createtime = request.getParameter("createTime");
         String md5passwd = MD5Utils.md5(password,MD5Utils.md5key);
 
         try {
@@ -44,6 +43,8 @@ public class Sql_Signup_Servlet extends HttpServlet {
         int count =  template.update(sql,account,md5passwd,phone,date);
 
         out.println(count);
+
+        System.out.println(createtime +":aaaaaa");
 
     }
 
@@ -61,5 +62,10 @@ public class Sql_Signup_Servlet extends HttpServlet {
         Date sqlDate = new Date(javaDate.getTime());
 
         return sqlDate;
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        doPost(req,resp);
     }
 }
