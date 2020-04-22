@@ -11,7 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/Sql_Inset_into">
+<form action="/FoodSharing_war/Sql_Inset_into" method="post">
+<input type="text" name = "account">
+    <input type="password" name = "passwd">
+    <input type="text" name = "realname">
+<input type="submit">
 
 </form>
     hello maven99999

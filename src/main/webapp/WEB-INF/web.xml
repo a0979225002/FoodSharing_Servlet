@@ -12,37 +12,79 @@
         <filter-name>Filter_UTF-8</filter-name>
         <url-pattern>*</url-pattern>
     </filter-mapping>
+    <!--    註冊帳密-->
     <servlet>
-        <servlet-name>Sql_Telegram</servlet-name>
-        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_Telegram</servlet-class>
+        <servlet-name>Sql_Signup_Servlet</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Signup.Sql_Signup_Servlet</servlet-class>
     </servlet>
+    <!--    驗證帳號是否重複-->
     <servlet>
-        <servlet-name>sql_sql</servlet-name>
-        <servlet-class>tw.org.iii.lipin.foodsharing.sql_sql</servlet-class>
+        <servlet-name>Sql_Signp_Verify_Account_Servlet</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Signup.Sql_Signp_Verify_Account_Servlet</servlet-class>
     </servlet>
+    <!--    驗證電話是否重複-->
     <servlet>
-        <servlet-name>Sql_Inset_into</servlet-name>
-        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_Inset_into</servlet-class>
+        <servlet-name>Sql_Signp_Verify_phone_Servlet</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Signup.Sql_Signp_Verify_phone_Servlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>Sql_delete</servlet-name>
-        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_delete</servlet-class>
-    </servlet>
+    <!--    註冊帳密-->
+    <servlet-mapping>
+        <servlet-name>Sql_Signup_Servlet</servlet-name>
+        <url-pattern>/Sql_Signup_Servlet</url-pattern>
+    </servlet-mapping>
+    <!--    驗證帳號是否重複-->
+    <servlet-mapping>
+        <servlet-name>Sql_Signp_Verify_Account_Servlet</servlet-name>
+        <url-pattern>/Sql_Signp_Verify_Account_Servlet</url-pattern>
+    </servlet-mapping>
+    <!--    驗證電話是否重複-->
+    <servlet-mapping>
+        <servlet-name>Sql_Signp_Verify_phone_Servlet</servlet-name>
+        <url-pattern>/Sql_Signp_Verify_phone_Servlet</url-pattern>
+    </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>Sql_Telegram</servlet-name>
-        <url-pattern>/Sql_Telegram</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>sql_sql</servlet-name>
-        <url-pattern>/sql_sql</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Sql_Inset_into</servlet-name>
-        <url-pattern>/Sql_Inset_into</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Sql_delete</servlet-name>
-        <url-pattern>/Sql_delete</url-pattern>
-    </servlet-mapping>
+
+
+<!--    <servlet>-->
+<!--        <servlet-name>Sql_Telegram</servlet-name>-->
+<!--        <servlet-class>tw.org.iii.lipin.foodsharing.sql.Sql_Telegram</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet>-->
+<!--        <servlet-name>sql_sql</servlet-name>-->
+<!--        <servlet-class>tw.org.iii.lipin.foodsharing.sql.sql_sql</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet>-->
+<!--        <servlet-name>Sql_Inset_into</servlet-name>-->
+<!--        <servlet-class>tw.org.iii.lipin.foodsharing.sql.Sql_Inset_into</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet>-->
+<!--        <servlet-name>Sql_delete</servlet-name>-->
+<!--        <servlet-class>tw.org.iii.lipin.foodsharing.sql.Sql_delete</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet>-->
+<!--        <servlet-name>Sql_verify</servlet-name>-->
+<!--        <servlet-class>tw.org.iii.lipin.foodsharing.sql.Sql_verify</servlet-class>-->
+<!--    </servlet>-->
+<!--    -->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Sql_verify</servlet-name>-->
+<!--        <url-pattern>/Sql_verify</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Sql_Telegram</servlet-name>-->
+<!--        <url-pattern>/Sql_Telegram</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>sql_sql</servlet-name>-->
+<!--        <url-pattern>/sql_sql</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Sql_Inset_into</servlet-name>-->
+<!--        <url-pattern>/Sql_Inset_into</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Sql_delete</servlet-name>-->
+<!--        <url-pattern>/Sql_delete</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>

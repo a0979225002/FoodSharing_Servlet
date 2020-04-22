@@ -1,4 +1,4 @@
-package tw.org.iii.lipin.foodsharing;
+package tw.org.iii.lipin.foodsharing.sql;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
+
 public class Sql_Inset_into extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,6 +20,7 @@ public class Sql_Inset_into extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        request.getRequestDispatcher("hello.jsp").forward(request,response);
         JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
         PrintWriter out = response.getWriter();
@@ -30,9 +33,17 @@ public class Sql_Inset_into extends HttpServlet {
         passwd = DigestUtils.md5Hex(passwd);
 
 
-        String sql = "insert into just(account,passed,realname) value (?,?,?)";
-        int count = template.update(sql,account,passwd,realname);
+//        String sql = "insert into just(account,passed,realname) value (?,?,?)";
 
-        out.println(count);
+//        int count = template.update(sql,account,passwd,realname);
+
+
+//        template.update();
+//        template.queryForList();
+//
+//
+//
+//
+//        out.println(count);
     }
 }

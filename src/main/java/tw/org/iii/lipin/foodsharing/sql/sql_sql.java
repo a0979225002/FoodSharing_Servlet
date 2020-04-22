@@ -1,4 +1,4 @@
-package tw.org.iii.lipin.foodsharing;
+package tw.org.iii.lipin.foodsharing.sql;
 
 import org.json.JSONArray;
 
