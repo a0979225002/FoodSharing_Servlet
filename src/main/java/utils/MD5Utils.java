@@ -29,7 +29,7 @@ public class MD5Utils {
     public static boolean md5_verify(String passwd,String md5key,String md5passwd){
         String md5Text = md5(passwd,md5key);
 
-        if (md5Text.equalsIgnoreCase(md5key+md5passwd)){
+        if (md5Text.equalsIgnoreCase(md5passwd)){
             md5Verify = true;
             return md5Verify;
         }

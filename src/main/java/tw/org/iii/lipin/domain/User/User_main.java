@@ -1,4 +1,4 @@
-package tw.org.iii.lipin.domain.Signup;
+package tw.org.iii.lipin.domain.User;
 
 import java.sql.Date;
 

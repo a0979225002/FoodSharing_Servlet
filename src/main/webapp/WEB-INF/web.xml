@@ -27,6 +27,11 @@
         <servlet-name>Sql_Signp_Verify_phone_Servlet</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.Signup.Sql_Signp_Verify_phone_Servlet</servlet-class>
     </servlet>
+<!--    驗證是否擁有帳號密碼-->
+    <servlet>
+        <servlet-name>Sql_Login_Verify</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.login.Sql_Login_Verify</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -41,6 +46,11 @@
     <servlet-mapping>
         <servlet-name>Sql_Signp_Verify_phone_Servlet</servlet-name>
         <url-pattern>/Sql_Signp_Verify_phone_Servlet</url-pattern>
+    </servlet-mapping>
+    <!--    驗證是否擁有帳號密碼-->
+    <servlet-mapping>
+        <servlet-name>Sql_Login_Verify</servlet-name>
+        <url-pattern>/Sql_Login_Verify</url-pattern>
     </servlet-mapping>
 
 
