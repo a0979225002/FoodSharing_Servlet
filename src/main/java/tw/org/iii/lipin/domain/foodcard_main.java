@@ -1,4 +1,4 @@
-package tw.org.iii.lipin.domain.User;
+package tw.org.iii.lipin.domain;
 
 
 import java.sql.Date;
@@ -13,9 +13,10 @@ public class foodcard_main {
     private Date due_date;
     private String tag;
     private int qty;
-    private boolean split;
+    private String split;
     private String detail;
-    private boolean status;
+    private String status;
+    private String foodimg;
     private Date createtime;
     private Date modified;
 
@@ -91,11 +92,11 @@ public class foodcard_main {
         this.qty = qty;
     }
 
-    public boolean isSplit() {
+    public String getSplit() {
         return split;
     }
 
-    public void setSplit(boolean split) {
+    public void setSplit(String split) {
         this.split = split;
     }
 
@@ -107,12 +108,20 @@ public class foodcard_main {
         this.detail = detail;
     }
 
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getFoodimg() {
+        return foodimg;
+    }
+
+    public void setFoodimg(String foodimg) {
+        this.foodimg = foodimg;
     }
 
     public Date getCreatetime() {
@@ -143,9 +152,10 @@ public class foodcard_main {
                 ", due_date=" + due_date +
                 ", tag='" + tag + '\'' +
                 ", qty=" + qty +
-                ", split=" + split +
+                ", split='" + split + '\'' +
                 ", detail='" + detail + '\'' +
-                ", status=" + status +
+                ", status='" + status + '\'' +
+                ", foodimg='" + foodimg + '\'' +
                 ", createtime=" + createtime +
                 ", modified=" + modified +
                 '}';

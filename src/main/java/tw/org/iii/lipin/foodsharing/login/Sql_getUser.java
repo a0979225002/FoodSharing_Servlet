@@ -3,7 +3,7 @@ package tw.org.iii.lipin.foodsharing.login;
 import org.json.JSONArray;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import tw.org.iii.lipin.domain.User.User_main;
+import tw.org.iii.lipin.domain.User_main;
 import utils.JDBCUtils;
 import utils.MD5Utils;
 
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

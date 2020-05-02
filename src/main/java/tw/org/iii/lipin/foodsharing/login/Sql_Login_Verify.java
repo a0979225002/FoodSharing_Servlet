@@ -2,7 +2,7 @@ package tw.org.iii.lipin.foodsharing.login;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import tw.org.iii.lipin.domain.User.User_main;
+import tw.org.iii.lipin.domain.User_main;
 import utils.JDBCUtils;
 import utils.MD5Utils;
 
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
 public class Sql_Login_Verify extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,8 +21,6 @@ public class Sql_Login_Verify extends HttpServlet {
         try {
             String account = request.getParameter("account");
             String password = request.getParameter("passwd") ;//拿取客戶端密碼
-
-
 
             String sql = "select * from user where account = ?";
 

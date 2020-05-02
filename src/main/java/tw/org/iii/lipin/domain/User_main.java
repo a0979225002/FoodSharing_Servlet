@@ -1,4 +1,4 @@
-package tw.org.iii.lipin.domain.User;
+package tw.org.iii.lipin.domain;
 
 import java.sql.Date;
 
