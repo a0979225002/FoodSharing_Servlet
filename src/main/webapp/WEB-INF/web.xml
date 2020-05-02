@@ -27,10 +27,20 @@
         <servlet-name>Sql_Signp_Verify_phone_Servlet</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.Signup.Sql_Signp_Verify_phone_Servlet</servlet-class>
     </servlet>
-<!--    驗證是否擁有帳號密碼-->
+    <!--    驗證是否擁有帳號密碼-->
     <servlet>
         <servlet-name>Sql_Login_Verify</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.login.Sql_Login_Verify</servlet-class>
+    </servlet>
+    <!--    加卡片加入sql-->
+    <servlet>
+        <servlet-name>Sql_AddFoodCard</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.newPreview.Sql_AddFoodCard</servlet-class>
+    </servlet>
+    <!--    給予帳密,將拿取json整個user資料表-->
+    <servlet>
+        <servlet-name>Sql_getUser</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.login.Sql_getUser</servlet-class>
     </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
@@ -51,6 +61,16 @@
     <servlet-mapping>
         <servlet-name>Sql_Login_Verify</servlet-name>
         <url-pattern>/Sql_Login_Verify</url-pattern>
+    </servlet-mapping>
+    <!--    加卡片加入sql-->
+    <servlet-mapping>
+        <servlet-name>Sql_AddFoodCard</servlet-name>
+        <url-pattern>/Sql_AddFoodCard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    <!--    給予帳密,將拿取json整個user資料表-->
+        <servlet-name>Sql_getUser</servlet-name>
+        <url-pattern>/Sql_getUser</url-pattern>
     </servlet-mapping>
 
 

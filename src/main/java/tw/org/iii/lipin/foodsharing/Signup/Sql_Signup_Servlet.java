@@ -35,9 +35,6 @@ public class Sql_Signup_Servlet extends HttpServlet {
         int count =  template.update(sql,account,md5passwd,phone,createtime);
 
         out.println(count);
-
-
-
     }
 
     @Override

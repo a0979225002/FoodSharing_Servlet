@@ -147,7 +147,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <port>8810</port>
+          <port>8815</port>
           <path>/FoodSharing_war</path>
         </configuration>
       </plugin>
