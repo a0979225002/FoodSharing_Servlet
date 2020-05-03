@@ -34,7 +34,7 @@ public class Sql_AddFoodCard extends HttpServlet {
 
         String sql = null;
 
-        System.out.println(dueDate);
+        System.out.println(foodname);
 
     try {
          sql = "insert into foodcard " +
