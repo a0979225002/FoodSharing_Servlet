@@ -47,11 +47,10 @@ public class Sql_getUser extends HttpServlet {
 
             for (Map<String,Object> maps : list){
                 array.put(maps);
-
-                out.println(array.toString());
-
-                System.out.println("測試＝＝＝＝＝＝"+array.toString());
             }
+            out.println(array.toString());
+
+            System.out.println("測試＝＝＝＝＝＝"+array.toString());
         }
     }
 
