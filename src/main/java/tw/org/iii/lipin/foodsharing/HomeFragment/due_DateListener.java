@@ -88,6 +88,8 @@ public class due_DateListener implements ServletContextListener,
                     if (duetime.before(nowdate)){//如果截止日期小於現在時間時 ＝true
                         sql = "update foodcard set status = ? where id = ?";
                         template.update(sql,0,map.get("id").toString());
+
+
                     }
             }
 
