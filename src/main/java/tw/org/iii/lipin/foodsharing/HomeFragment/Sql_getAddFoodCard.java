@@ -22,18 +22,33 @@ public class Sql_getAddFoodCard extends HttpServlet {
         List<Map<String, Object>> maps = null;
         String dist = request.getParameter("dist");
         String city = request.getParameter("city");
+        String Userid = request.getParameter("userid");
 
+        System.out.println(Userid);
         try {
             //比對是否有地址傳回
             //測試版人少,只抓縣市而已
+            //拿取不含user自己本人發布的
             if (dist != null || city != null){
-                sql = "select * from foodcard where (city = ? and status = ?) order by id desc ";
-                maps= template.queryForList(sql,city,1);
+                sql = "select * from foodcard as fc " +
+                        " left join user_has_foodcards as uhf " +
+                        " on fc.id = uhf.foodcard_id" +
+                        " where not uhf.user_id = ?" +
+                        " and fc.status = ?" +
+                        " and fc.city = ?" +
+                        " order by fc.id desc ";
+                maps= template.queryForList(sql,Userid,1,city);
 
             }else {
-                //如果沒有取得客戶端地址,拿取最新發布的20筆
-                sql = "select * from foodcard where status = 1 order by id desc LIMIT 20";
-                maps= template.queryForList(sql);
+                //如果沒有取得客戶端地址,拿取最新發布的20筆,拿取不含user自己本人發布的
+                sql = "select * from foodcard as fc " +
+                        " left join user_has_foodcards as shf " +
+                        " on fc.id = shf.foodcard_id" +
+                        " where not shf.user_id = ?" +
+                        " and fc.status = ?" +
+                        " order by fc.id desc LIMIT ?";
+
+                maps= template.queryForList(sql,Userid,1,20);
 
             }
         }catch (Exception e){
