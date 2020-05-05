@@ -29,7 +29,7 @@ public class Sql_getAddFoodCard extends HttpServlet {
             //比對是否有地址傳回
             //測試版人少,只抓縣市而已
             //拿取不含user自己本人發布的
-            if (dist != null || city != null){
+            if (dist != null && city != null){
                 sql = "select fc.*,us.account,us.img,us.username" +
                         " from foodcard as fc " +
                         " left join user_has_foodcards as uhf " +
@@ -44,6 +44,7 @@ public class Sql_getAddFoodCard extends HttpServlet {
 
             }else {
                 //如果沒有取得客戶端地址,拿取最新發布的20筆,拿取不含user自己本人發布的
+
                 sql = "select fc.*,us.account,us.img,us.username" +
                         " from foodcard as fc " +
                         " left join user_has_foodcards as uhf " +
@@ -52,9 +53,9 @@ public class Sql_getAddFoodCard extends HttpServlet {
                         " on uhf.user_id = us.id" +
                         " where not uhf.user_id = ?" +
                         " and fc.status = ?" +
-                        " order by fc.id desc LIMIT ?";
+                        " order by fc.id desc LIMIT 20";
 
-                maps= template.queryForList(sql,Userid,1,20);
+                maps= template.queryForList(sql,Userid,1);
 
             }
         }catch (Exception e){
