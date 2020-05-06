@@ -53,9 +53,9 @@ public class Sql_getAddFoodCard extends HttpServlet {
                         " on uhf.user_id = us.id" +
                         " where not uhf.user_id = ?" +
                         " and fc.status = ?" +
-                        " order by fc.id desc LIMIT 20";
+                        " order by fc.id desc LIMIT ?";
 
-                maps= template.queryForList(sql,Userid,1);
+                maps= template.queryForList(sql,Userid,1,20);
 
             }
         }catch (Exception e){

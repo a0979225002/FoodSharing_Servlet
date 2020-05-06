@@ -50,6 +50,10 @@
         <servlet-name>Sql_getAddFoodCard</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.HomeFragment.Sql_getAddFoodCard</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MessgingService</servlet-name>
+        <servlet-class>tw.org.iii.lipin.Sql_foodinfoTaker.MessgingService</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -84,6 +88,10 @@
     <servlet-mapping>
         <servlet-name>Sql_getAddFoodCard</servlet-name>
         <url-pattern>/Sql_getAddFoodCard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessgingService</servlet-name>
+        <url-pattern>/MessgingService</url-pattern>
     </servlet-mapping>
 
 

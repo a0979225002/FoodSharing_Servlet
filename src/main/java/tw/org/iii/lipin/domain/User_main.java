@@ -4,10 +4,16 @@ import java.sql.Date;
 
 public class User_main {
     private int id;
-    private String name;
+    private String username;
     private String account;
     private String phone;
     private String password;
+    private String email;
+    private String img;
+    private String city;
+    private String dist;
+    private String address;
+    private String token;
     private Date createTime;
     private Date modified;
 
@@ -19,12 +25,12 @@ public class User_main {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getAccount() {
@@ -51,6 +57,54 @@ public class User_main {
         this.password = password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getDist() {
+        return dist;
+    }
+
+    public void setDist(String dist) {
+        this.dist = dist;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -65,18 +119,5 @@ public class User_main {
 
     public void setModified(Date modified) {
         this.modified = modified;
-    }
-
-    @Override
-    public String toString() {
-        return "User_main{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", account='" + account + '\'' +
-                ", phone='" + phone + '\'' +
-                ", password='" + password + '\'' +
-                ", createTime=" + createTime +
-                ", modified=" + modified +
-                '}';
     }
 }
