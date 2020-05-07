@@ -17,9 +17,13 @@ public class MessgingService extends HttpServlet {
 
         String GiverToken = request.getParameter("GiverToken");
         String UserToken = request.getParameter("UserToken");
+        String username = request.getParameter("username");
+        String foodname = request.getParameter("foodname");
 
-        final String AUTH_KEY_FCM = UserToken;
-         final String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
+
+        final String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
+        final String AUTH_KEY_FCM = "AAAA_SQ0U_k:APA91bFUA2vxOA6VCNPkKrXqaB_rifXxdRomgRzyH-uu2DxERnwdC-QIRHOmWrEg1ZoYUle4V2Eor1mWv9Rh8VZ5qFOVX7rL24_1KehNb34P_hPZZN8QxAZ0l1LiRuijmgnr9c-Ki2D5";
+        System.out.println(UserToken);
 
         // userDeviceIdKey is the device id you will query from your database
         try {
@@ -38,10 +42,10 @@ public class MessgingService extends HttpServlet {
             conn.setRequestProperty("Content-Type","application/json");
 
             JSONObject json = new JSONObject();
-            json.put("to",GiverToken.trim());
+            json.put("to",UserToken.trim());
             JSONObject info = new JSONObject();
-            info.put("title", "Notificatoin Title"); // Notification title
-            info.put("body", "Hello Test notification"); // Notification body
+            info.put("title", "來自您發布的一則"+foodname+"消息"); // Notification title
+            info.put("body", username+"想索取您發布的食物,如果允許,您需要主動聯繫他"); // Notification body
             json.put("notification", info);
 
             OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
