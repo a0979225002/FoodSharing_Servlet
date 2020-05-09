@@ -30,7 +30,7 @@ public class Sql_getAddFoodCard extends HttpServlet {
             //測試版人少,只抓縣市而已
             //拿取不含user自己本人發布的
             if (dist != null && city != null){
-                sql = "select fc.*,us.account,us.img,us.username" +
+                sql = "select fc.*,us.account,us.img,us.username,us.token" +
                         " from foodcard as fc " +
                         " left join user_has_foodcards as uhf " +
                         " on fc.id = uhf.foodcard_id" +
@@ -45,7 +45,7 @@ public class Sql_getAddFoodCard extends HttpServlet {
             }else {
                 //如果沒有取得客戶端地址,拿取最新發布的20筆,拿取不含user自己本人發布的
 
-                sql = "select fc.*,us.account,us.img,us.username" +
+                sql = "select fc.*,us.account,us.img,us.username,us.token" +
                         " from foodcard as fc " +
                         " left join user_has_foodcards as uhf " +
                         " on fc.id = uhf.foodcard_id" +

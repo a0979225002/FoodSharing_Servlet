@@ -50,9 +50,20 @@
         <servlet-name>Sql_getAddFoodCard</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.HomeFragment.Sql_getAddFoodCard</servlet-class>
     </servlet>
+    <!--    拿取發布者token,傳出token通知他-->
     <servlet>
         <servlet-name>MessgingService</servlet-name>
         <servlet-class>tw.org.iii.lipin.Sql_foodinfoTaker.MessgingService</servlet-class>
+    </servlet>
+    <!--    搜尋功能-->
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.HomeFragment.Search</servlet-class>
+    </servlet>
+    <!--    搜尋該用戶發布的食物卡片-->
+    <servlet>
+        <servlet-name>Sql_ShareFoodcard</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.ShareHistoryFragment.Sql_ShareFoodcard</servlet-class>
     </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
@@ -89,9 +100,20 @@
         <servlet-name>Sql_getAddFoodCard</servlet-name>
         <url-pattern>/Sql_getAddFoodCard</url-pattern>
     </servlet-mapping>
+    <!--    拿取發布者token,傳出token通知他-->
     <servlet-mapping>
         <servlet-name>MessgingService</servlet-name>
         <url-pattern>/MessgingService</url-pattern>
+    </servlet-mapping>
+    <!--    搜尋功能-->
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+    <!--    搜尋該用戶發布的食物卡片-->
+    <servlet-mapping>
+        <servlet-name>Sql_ShareFoodcard</servlet-name>
+        <url-pattern>/Sql_ShareFoodcard</url-pattern>
     </servlet-mapping>
 
 
