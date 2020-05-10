@@ -1,4 +1,4 @@
-package tw.org.iii.lipin.Sql_foodinfoTaker;
+package tw.org.iii.lipin.foodsharing.Sql_foodinfoTaker;
 
 import org.json.JSONObject;
 

@@ -53,7 +53,7 @@
     <!--    拿取發布者token,傳出token通知他-->
     <servlet>
         <servlet-name>MessgingService</servlet-name>
-        <servlet-class>tw.org.iii.lipin.Sql_foodinfoTaker.MessgingService</servlet-class>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_foodinfoTaker.MessgingService</servlet-class>
     </servlet>
     <!--    搜尋功能-->
     <servlet>
@@ -64,6 +64,21 @@
     <servlet>
         <servlet-name>Sql_ShareFoodcard</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.ShareHistoryFragment.Sql_ShareFoodcard</servlet-class>
+    </servlet>
+    <!--    加入排隊狀態-->
+    <servlet>
+        <servlet-name>SQl_queueTaker</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_foodinfoTaker.SQl_queueTaker</servlet-class>
+    </servlet>
+    <!--    檢查客戶是否已經在排隊中-->
+    <servlet>
+        <servlet-name>Sql_QueueStatus</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_foodinfoTaker.Sql_QueueStatus</servlet-class>
+    </servlet>
+    <!--    取消客戶排隊狀態-->
+    <servlet>
+        <servlet-name>Sql_cancelQueue</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Sql_foodinfoTaker.Sql_cancelQueue</servlet-class>
     </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
@@ -115,7 +130,21 @@
         <servlet-name>Sql_ShareFoodcard</servlet-name>
         <url-pattern>/Sql_ShareFoodcard</url-pattern>
     </servlet-mapping>
-
+    <!--    加入排隊狀態-->
+    <servlet-mapping>
+        <servlet-name>SQl_queueTaker</servlet-name>
+        <url-pattern>/SQl_queueTaker</url-pattern>
+    </servlet-mapping>
+    <!--    檢查客戶是否已經在排隊中-->
+    <servlet-mapping>
+        <servlet-name>Sql_QueueStatus</servlet-name>
+        <url-pattern>/Sql_QueueStatus</url-pattern>
+    </servlet-mapping>
+    <!--    取消客戶排隊狀態-->
+    <servlet-mapping>
+        <servlet-name>Sql_cancelQueue</servlet-name>
+        <url-pattern>/Sql_cancelQueue</url-pattern>
+    </servlet-mapping>
 
 <!--    <servlet>-->
 <!--        <servlet-name>Sql_Telegram</servlet-name>-->
