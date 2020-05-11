@@ -80,6 +80,11 @@
         <servlet-name>Sql_cancelQueue</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.Sql_foodinfoTaker.Sql_cancelQueue</servlet-class>
     </servlet>
+    <!--    拿取與user縣市相鄰的食物卡片-->
+    <servlet>
+        <servlet-name>Sql_getfoodcardCity</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.GoogleMap.Sql_getfoodcardCity</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -144,6 +149,11 @@
     <servlet-mapping>
         <servlet-name>Sql_cancelQueue</servlet-name>
         <url-pattern>/Sql_cancelQueue</url-pattern>
+    </servlet-mapping>
+    <!--    拿取與user縣市相鄰的食物卡片-->
+    <servlet-mapping>
+        <servlet-name>Sql_getfoodcardCity</servlet-name>
+        <url-pattern>/Sql_getfoodcardCity</url-pattern>
     </servlet-mapping>
 
 <!--    <servlet>-->

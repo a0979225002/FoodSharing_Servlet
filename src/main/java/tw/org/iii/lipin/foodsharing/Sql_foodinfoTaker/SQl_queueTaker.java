@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 public class SQl_queueTaker extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,15 +22,29 @@ public class SQl_queueTaker extends HttpServlet {
         String giverid = request.getParameter("giverid"); //想要排隊的userid
         String nowdate = request.getParameter("nowdate");
         String sql = null;
+        foodcard_has_takers fht = null;
 
         try {
-            sql = "select * from foodcard_has_takers" +
-                    " where foodcard_id = ?" +
-                    " and  user_id = ?";
+            try {
+                sql = "select * from foodcard_has_takers" +
+                        " where foodcard_id = ?" +
+                        " and  user_id = ?";
 
-            foodcard_has_takers fht =
-                    template.queryForObject(sql,new BeanPropertyRowMapper<>(foodcard_has_takers.class),
-                            foodcardID,giverid);
+                 fht =
+                        template.queryForObject(sql,new BeanPropertyRowMapper<>(foodcard_has_takers.class),
+                                foodcardID,giverid);
+
+            }catch (Exception e){
+
+                sql = "insert into foodcard_has_takers " +
+                        " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
+                        " value (?,?,?,?,?,?,?)";
+
+                int count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
+                out.println(count);
+
+            }
+
 
             if (fht.getQty() == 0) {
                 sql = "insert into foodcard_has_takers " +
