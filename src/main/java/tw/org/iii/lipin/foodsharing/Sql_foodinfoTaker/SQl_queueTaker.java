@@ -23,7 +23,7 @@ public class SQl_queueTaker extends HttpServlet {
         String nowdate = request.getParameter("nowdate");
         String sql = null;
         foodcard_has_takers fht = null;
-
+        int count = 0;
         try {
             try {
                 sql = "select * from foodcard_has_takers" +
@@ -40,20 +40,20 @@ public class SQl_queueTaker extends HttpServlet {
                         " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
                         " value (?,?,?,?,?,?,?)";
 
-                int count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
+                count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
                 out.println(count);
 
+                System.out.println(count);
             }
-
-
-            if (fht.getQty() == 0) {
+            System.out.println(fht.getQty()+"123");
+            if (fht.getQty() == 0 && fht != null) {
                 sql = "insert into foodcard_has_takers " +
                         " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
                         " value (?,?,?,?,?,?,?)";
 
-                int count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
+                count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
                 out.println(count);
-            }else if (fht.getQty() != 0 ){
+            }else if (fht.getQty() != 0 && fht != null){
 
                 sql = " update foodcard_has_takers" +
                         " set inline = ?," +
@@ -61,21 +61,18 @@ public class SQl_queueTaker extends HttpServlet {
                         " where foodcard_id = ?" +
                         " and  user_id = ?";
 
-                int count = template.update(sql,1,queue,foodcardID,giverid);
+                count = template.update(sql,1,queue,foodcardID,giverid);
 
                 System.out.println(count);
                 out.println(count);
             }
 
         }catch (Exception e){
-            System.out.println(e.toString());
-            out.println(0);
+            System.out.println(e.toString()+123);
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         doPost(request,response);
     }
 }
