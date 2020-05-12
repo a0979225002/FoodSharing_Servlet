@@ -25,47 +25,37 @@ public class SQl_queueTaker extends HttpServlet {
         foodcard_has_takers fht = null;
         int count = 0;
         try {
-            try {
-                sql = "select * from foodcard_has_takers" +
+
+            //查詢是否有該筆數
+                sql = "select count(*) from foodcard_has_takers" +
                         " where foodcard_id = ?" +
                         " and  user_id = ?";
 
-                 fht =
-                        template.queryForObject(sql,new BeanPropertyRowMapper<>(foodcard_has_takers.class),
-                                foodcardID,giverid);
+                count = template.queryForInt(sql,foodcardID,giverid);
 
-            }catch (Exception e){
+            //如果沒有就新增
+                if (count == 0){
+                    sql = "insert into foodcard_has_takers " +
+                            " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
+                            " value (?,?,?,?,?,?,?)";
 
-                sql = "insert into foodcard_has_takers " +
-                        " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
-                        " value (?,?,?,?,?,?,?)";
+                    count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
+                    out.println(count);
 
-                count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
-                out.println(count);
+                    System.out.println(count);
+             //如果有的話
+                }else if (count !=0){
+                    sql = " update foodcard_has_takers" +
+                            " set inline = ?," +
+                            " qty = ?" +
+                            " where foodcard_id = ?" +
+                            " and  user_id = ?";
 
-                System.out.println(count);
-            }
-            System.out.println(fht.getQty()+"123");
-            if (fht.getQty() == 0 && fht != null) {
-                sql = "insert into foodcard_has_takers " +
-                        " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
-                        " value (?,?,?,?,?,?,?)";
+                    count = template.update(sql,1,queue,foodcardID,giverid);
 
-                count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
-                out.println(count);
-            }else if (fht.getQty() != 0 && fht != null){
-
-                sql = " update foodcard_has_takers" +
-                        " set inline = ?," +
-                        " qty = ?" +
-                        " where foodcard_id = ?" +
-                        " and  user_id = ?";
-
-                count = template.update(sql,1,queue,foodcardID,giverid);
-
-                System.out.println(count);
-                out.println(count);
-            }
+                    System.out.println(count);
+                    out.println(count);
+                }
 
         }catch (Exception e){
             System.out.println(e.toString()+123);
