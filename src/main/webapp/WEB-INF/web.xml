@@ -105,6 +105,11 @@
         <servlet-name>GiverMessgingService</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.FoodinfoGiver.GiverMessgingService</servlet-class>
     </servlet>
+    <!--    結束食物分享-->
+    <servlet>
+        <servlet-name>Sql_foodEnd</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.FoodinfoGiver.Sql_foodEnd</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -194,6 +199,11 @@
     <servlet-mapping>
         <servlet-name>GiverMessgingService</servlet-name>
         <url-pattern>/GiverMessgingService</url-pattern>
+    </servlet-mapping>  
+    <!--    結束食物分享-->
+    <servlet-mapping>
+        <servlet-name>Sql_foodEnd</servlet-name>
+        <url-pattern>/Sql_foodEnd</url-pattern>
     </servlet-mapping>
 
 <!--    <servlet>-->
