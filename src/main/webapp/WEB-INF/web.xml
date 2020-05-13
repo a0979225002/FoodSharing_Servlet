@@ -85,6 +85,26 @@
         <servlet-name>Sql_getfoodcardCity</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.GoogleMap.Sql_getfoodcardCity</servlet-class>
     </servlet>
+    <!--    拿取想排隊的通知-->
+    <servlet>
+        <servlet-name>Sql_getTakerqueue</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Notification.Sql_getTakerqueue</servlet-class>
+    </servlet>
+    <!--    拿取user自己的foodcard-->
+    <servlet>
+        <servlet-name>Sql_getTaker</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.FoodinfoGiver.Sql_getTaker</servlet-class>
+    </servlet>
+    <!--    更新領取狀態-->
+    <servlet>
+        <servlet-name>updateTakeornot</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.FoodinfoGiver.updateTakeornot</servlet-class>
+    </servlet>
+    <!--    推播通知索取者-->
+    <servlet>
+        <servlet-name>GiverMessgingService</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.FoodinfoGiver.GiverMessgingService</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -154,6 +174,26 @@
     <servlet-mapping>
         <servlet-name>Sql_getfoodcardCity</servlet-name>
         <url-pattern>/Sql_getfoodcardCity</url-pattern>
+    </servlet-mapping>
+    <!--    拿取想排隊的通知-->
+    <servlet-mapping>
+        <servlet-name>Sql_getTakerqueue</servlet-name>
+        <url-pattern>/Sql_getTakerqueue</url-pattern>
+    </servlet-mapping>
+    <!--    拿取user自己的foodcard-->
+    <servlet-mapping>
+        <servlet-name>Sql_getTaker</servlet-name>
+        <url-pattern>/Sql_getTaker</url-pattern>
+    </servlet-mapping>
+    <!--    更新領取狀態-->
+    <servlet-mapping>
+        <servlet-name>updateTakeornot</servlet-name>
+        <url-pattern>/updateTakeornot</url-pattern>
+    </servlet-mapping>
+    <!--    推播通知索取者-->
+    <servlet-mapping>
+        <servlet-name>GiverMessgingService</servlet-name>
+        <url-pattern>/GiverMessgingService</url-pattern>
     </servlet-mapping>
 
 <!--    <servlet>-->

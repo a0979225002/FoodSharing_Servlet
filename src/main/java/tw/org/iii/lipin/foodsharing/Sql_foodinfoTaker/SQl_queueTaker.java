@@ -45,16 +45,35 @@ public class SQl_queueTaker extends HttpServlet {
                     System.out.println(count);
              //如果有的話
                 }else if (count !=0){
-                    sql = " update foodcard_has_takers" +
-                            " set inline = ?," +
-                            " qty = ?" +
+                    sql = "select * from foodcard_has_takers" +
                             " where foodcard_id = ?" +
-                            " and  user_id = ?";
+                            " and user_id = ?";
+                    fht = template.queryForObject(sql,new BeanPropertyRowMapper<>(foodcard_has_takers.class),foodcardID,giverid);
+                    System.out.println(fht.getInline()+"查驗");
+                    if (fht.getInline() ==1){
+                        sql = " update foodcard_has_takers" +
+                                " set inline = ?," +
+                                " qty = ?" +
+                                " where foodcard_id = ?" +
+                                " and  user_id = ?";
 
-                    count = template.update(sql,1,queue,foodcardID,giverid);
+                        count = template.update(sql,0,queue,foodcardID,giverid);
 
-                    System.out.println(count);
-                    out.println(count);
+                        System.out.println(count);
+                        out.println(count);
+                    }else if (fht.getInline() ==0){
+                        sql = " update foodcard_has_takers" +
+                                " set inline = ?," +
+                                " qty = ?" +
+                                " where foodcard_id = ?" +
+                                " and  user_id = ?";
+
+                        count = template.update(sql,1,queue,foodcardID,giverid);
+
+                        System.out.println(count);
+                        out.println(count);
+                    }
+
                 }
 
         }catch (Exception e){
