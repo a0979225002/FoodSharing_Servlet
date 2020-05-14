@@ -110,6 +110,11 @@
         <servlet-name>Sql_foodEnd</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.FoodinfoGiver.Sql_foodEnd</servlet-class>
     </servlet>
+    <!--    編輯以發布的食物-->
+    <servlet>
+        <servlet-name>SaveEditFoodCard</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.newPreview.SaveEditFoodCard</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -204,6 +209,11 @@
     <servlet-mapping>
         <servlet-name>Sql_foodEnd</servlet-name>
         <url-pattern>/Sql_foodEnd</url-pattern>
+    </servlet-mapping>
+    <!--    編輯以發布的食物-->
+    <servlet-mapping>
+        <servlet-name>SaveEditFoodCard</servlet-name>
+        <url-pattern>/SaveEditFoodCard</url-pattern>
     </servlet-mapping>
 
 <!--    <servlet>-->
