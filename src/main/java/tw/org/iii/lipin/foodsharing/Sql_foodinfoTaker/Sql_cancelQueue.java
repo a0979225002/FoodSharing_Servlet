@@ -20,13 +20,15 @@ public class Sql_cancelQueue extends HttpServlet {
         String foodcardID = request.getParameter("foodcardID");
         System.out.println(giverid+":::"+foodcardID);
         String sql = null;
+        System.out.println("我在這");
         try {
             sql = " update foodcard_has_takers" +
-                    " set inline = ?" +
+                    " set inline = ?," +
+                    " giveraccept = ?" +
                     " where foodcard_id = ?" +
                     " and  user_id = ?";
 
-            int count = template.update(sql,0,foodcardID,giverid);
+            int count = template.update(sql,0,0,foodcardID,giverid);
 
             System.out.println(count);
             out.println(count);

@@ -24,6 +24,8 @@ public class SQl_queueTaker extends HttpServlet {
         String sql = null;
         foodcard_has_takers fht = null;
         int count = 0;
+
+        System.out.println("有來媽");
         try {
 
             //查詢是否有該筆數
@@ -49,7 +51,7 @@ public class SQl_queueTaker extends HttpServlet {
                             " where foodcard_id = ?" +
                             " and user_id = ?";
                     fht = template.queryForObject(sql,new BeanPropertyRowMapper<>(foodcard_has_takers.class),foodcardID,giverid);
-                    System.out.println(fht.getInline()+"查驗");
+                    System.out.println(fht.getInline()+"查驗"+fht.getInline());
                     if (fht.getInline() ==1){
                         sql = " update foodcard_has_takers" +
                                 " set inline = ?," +

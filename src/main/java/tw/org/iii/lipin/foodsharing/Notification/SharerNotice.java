@@ -41,7 +41,6 @@ public class SharerNotice extends HttpServlet {
             for (Map<String,Object>map :maps){
                 array.put(map);
             }
-            System.out.println(array.toString());
             out.println(array.toString());
 
         }catch (Exception e){
