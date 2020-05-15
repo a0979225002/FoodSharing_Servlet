@@ -36,7 +36,7 @@ public class SQl_queueTaker extends HttpServlet {
             //如果沒有就新增
                 if (count == 0){
                     sql = "insert into foodcard_has_takers " +
-                            " (foodcard_id, user_id, qty, inline, giveraccept, takeornot, createtime )" +
+                            " (foodcard_id, user_id, takerqty, inline, giveraccept, takeornot, createtime )" +
                             " value (?,?,?,?,?,?,?)";
 
                     count = template.update(sql, foodcardID, giverid, queue, 1, 0, 0, nowdate);
@@ -53,7 +53,7 @@ public class SQl_queueTaker extends HttpServlet {
                     if (fht.getInline() ==1){
                         sql = " update foodcard_has_takers" +
                                 " set inline = ?," +
-                                " qty = ?" +
+                                " takerqty = ?" +
                                 " where foodcard_id = ?" +
                                 " and  user_id = ?";
 
@@ -64,7 +64,7 @@ public class SQl_queueTaker extends HttpServlet {
                     }else if (fht.getInline() ==0){
                         sql = " update foodcard_has_takers" +
                                 " set inline = ?," +
-                                " qty = ?" +
+                                " takerqty = ?" +
                                 " where foodcard_id = ?" +
                                 " and  user_id = ?";
 

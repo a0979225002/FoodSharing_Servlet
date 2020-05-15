@@ -5,12 +5,30 @@ import java.util.Date;
 public class foodcard_has_takers {
     private int foodcard_id;
     private int user_id;
-    private int qty;
+    private int takerqty;
     private int inline;
     private int giveraccept;
     private Date create;
     private Date modified;
     private int status;
+    private int takeornot;
+    private String comment;
+
+    public int getTakeornot() {
+        return takeornot;
+    }
+
+    public void setTakeornot(int takeornot) {
+        this.takeornot = takeornot;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     public int getFoodcard_id() {
         return foodcard_id;
@@ -28,12 +46,12 @@ public class foodcard_has_takers {
         this.user_id = user_id;
     }
 
-    public int getQty() {
-        return qty;
+    public int getTakerqty() {
+        return takerqty;
     }
 
-    public void setQty(int qty) {
-        this.qty = qty;
+    public void setTakerqty(int takerqty) {
+        this.takerqty = takerqty;
     }
 
     public int getInline() {
