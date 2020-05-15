@@ -14,8 +14,9 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
-public class getgiveraccept extends HttpServlet {
+public class CommentNotice extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
         JSONArray array = new JSONArray();
         PrintWriter out = response.getWriter();
@@ -34,15 +35,14 @@ public class getgiveraccept extends HttpServlet {
                     " where fht.takeornot = ?" +
                     " and fht.giveraccept = ?" +
                     " and fht.user_id = ?" +
-                    " and fc.status = ?" +
+                    " and fht.comment is null  " +
                     " order by fht.modified desc ";
 
-            List<Map<String,Object>> maps = template.queryForList(sql,0,1,userid,1);
+            List<Map<String,Object>> maps = template.queryForList(sql,1,1,userid);
 
             for (Map<String,Object>map :maps){
                 array.put(map);
             }
-
             out.println(array.toString());
         }catch (Exception e){
             System.out.println(e.toString());
@@ -51,6 +51,6 @@ public class getgiveraccept extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 }

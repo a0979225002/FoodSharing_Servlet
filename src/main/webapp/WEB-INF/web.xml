@@ -135,6 +135,16 @@
         <servlet-name>getgiveraccept</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.Notification.getgiveraccept</servlet-class>
     </servlet>
+    <!--    拿取已領取完畢的狀態,目的發評論-->
+    <servlet>
+        <servlet-name>CommentNotice</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Notification.CommentNotice</servlet-class>
+    </servlet>
+    <!--    加入索取者給予的評論-->
+    <servlet>
+        <servlet-name>UpdateComment</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.Notification.UpdateComment</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -253,6 +263,16 @@
     <servlet-mapping>
         <servlet-name>getgiveraccept</servlet-name>
         <url-pattern>/getgiveraccept</url-pattern>
+    </servlet-mapping>
+    <!--    拿取已領取完畢的狀態,目的發評論-->
+    <servlet-mapping>
+        <servlet-name>CommentNotice</servlet-name>
+        <url-pattern>/CommentNotice</url-pattern>
+    </servlet-mapping>
+    <!--    加入索取者給予的評論-->
+    <servlet-mapping>
+        <servlet-name>UpdateComment</servlet-name>
+        <url-pattern>/UpdateComment</url-pattern>
     </servlet-mapping>
 
 <!--    <servlet>-->

@@ -43,6 +43,7 @@ public class SharerNotice extends HttpServlet {
             }
             out.println(array.toString());
 
+
         }catch (Exception e){
             System.out.println(e.toString());
         }
