@@ -16,6 +16,15 @@ public class User_main {
     private String token;
     private Date createTime;
     private Date modified;
+    private int fraction;
+
+    public int getFraction() {
+        return fraction;
+    }
+
+    public void setFraction(int fraction) {
+        this.fraction = fraction;
+    }
 
     public int getId() {
         return id;

@@ -145,6 +145,21 @@
         <servlet-name>UpdateComment</servlet-name>
         <servlet-class>tw.org.iii.lipin.foodsharing.Notification.UpdateComment</servlet-class>
     </servlet>
+    <!--    拿取評論資訊-->
+    <servlet>
+        <servlet-name>getUserComment</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.CommentFragment.getUserComment</servlet-class>
+    </servlet>
+    <!--    拿取user的評論總分-->
+    <servlet>
+        <servlet-name>getUserFraction</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.ProfileFragment.getUserFraction</servlet-class>
+    </servlet>
+<!--    拿取user完成交易的比數-->
+    <servlet>
+        <servlet-name>getTransactionRatio</servlet-name>
+        <servlet-class>tw.org.iii.lipin.foodsharing.ProfileFragment.getTransactionRatio</servlet-class>
+    </servlet>
     <!--    註冊帳密-->
     <servlet-mapping>
         <servlet-name>Sql_Signup_Servlet</servlet-name>
@@ -273,6 +288,21 @@
     <servlet-mapping>
         <servlet-name>UpdateComment</servlet-name>
         <url-pattern>/UpdateComment</url-pattern>
+    </servlet-mapping>
+    <!--    拿取評論資訊-->
+    <servlet-mapping>
+        <servlet-name>getUserComment</servlet-name>
+        <url-pattern>/getUserComment</url-pattern>
+    </servlet-mapping>
+    <!--    拿取user的評論總分-->
+    <servlet-mapping>
+        <servlet-name>getUserFraction</servlet-name>
+        <url-pattern>/getUserFraction</url-pattern>
+    </servlet-mapping>
+    <!--    拿取user完成交易的比數-->
+    <servlet-mapping>
+        <servlet-name>getTransactionRatio</servlet-name>
+        <url-pattern>/getTransactionRatio</url-pattern>
     </servlet-mapping>
 
 <!--    <servlet>-->
