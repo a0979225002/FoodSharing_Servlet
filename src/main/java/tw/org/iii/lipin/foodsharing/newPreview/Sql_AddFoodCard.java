@@ -56,7 +56,7 @@ public class Sql_AddFoodCard extends HttpServlet {
                  sql = "insert into user_has_foodcards (user_id,foodcard_id) value (?,?)";
                  int count2 = template.update(sql,userID,foodid);
                  out.println(count2);
-                 System.out.println(count2+"加入成功摟");
+                 System.out.println(count2+"加入成功摟"+userID+"::"+foodid);
              }else {
                  out.println(foodid);
              }

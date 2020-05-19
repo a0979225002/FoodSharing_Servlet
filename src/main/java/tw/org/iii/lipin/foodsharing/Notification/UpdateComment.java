@@ -45,7 +45,7 @@ public class UpdateComment extends HttpServlet {
                      " set user.fraction = ? " +
                      " where user.id = ?";
               count = template.update(sql,fraction,giverid);
-
+              System.out.println(count+":"+fraction+"::"+giverid);
               out.println(count);
             }else {
                 out.println(count);

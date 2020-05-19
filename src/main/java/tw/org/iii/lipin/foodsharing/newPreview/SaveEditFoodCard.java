@@ -37,8 +37,6 @@ public class SaveEditFoodCard extends HttpServlet {
         System.out.println(address);
 
         try {
-
-
             sql = "update foodcard " +
                     " left join user_has_foodcards as uhf" +
                     " on foodcard.id = uhf.foodcard_id" +

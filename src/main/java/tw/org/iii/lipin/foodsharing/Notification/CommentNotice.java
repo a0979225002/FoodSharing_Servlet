@@ -24,7 +24,9 @@ public class CommentNotice extends HttpServlet {
         String sql = null;
         foodcard_has_takers fht = null;
         try {
-            sql = "select fht.*,fc.*,us.id,us.account,us.img,us.username,us.token" +
+            sql = "select fht.*," +
+                    " fc.name,fc.category,fc.city,fc.dist,fc.address,fc.split,fc.due_date,fc.tag,fc.qty,fc.detail,fc.status,fc.foodimg,fc.createtime," +
+                    " us.id,us.account,us.img,us.username,us.token" +
                     " from foodcard_has_takers as fht " +
                     " left join foodcard as fc" +
                     " on fht.foodcard_id = fc.id" +
