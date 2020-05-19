@@ -12,8 +12,6 @@ a0979225002:後端撰寫,前端app功能實現
 <br>  
 共通完成項目:專案頁面xml實現
 <br>  
-影片製作:YichunChen49
-![image](imag/all.gif)
 
 開發環境android 23
 
@@ -27,9 +25,6 @@ a0979225002:後端撰寫,前端app功能實現
 2020/05/17
 <br>  
 加入user個人評價分數
-
-![image](imag/device-2020-05-18-215633.png)
-![image](imag/device-2020-05-18-215610.png)
 
 如有程式上問題,或想參觀交流,可聯繫我
 我的信箱:a0979225002@gmail.com
