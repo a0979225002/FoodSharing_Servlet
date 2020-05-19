@@ -33,7 +33,7 @@ public class SQl_queueTaker extends HttpServlet {
                         " where foodcard_id = ?" +
                         " and  user_id = ?";
 
-                count = template.queryForInt(sql,foodcardID,giverid);
+                count = template.queryForObject(sql,new BeanPropertyRowMapper<>(Integer.class),foodcardID,giverid);
 
             //如果沒有就新增
                 if (count == 0){

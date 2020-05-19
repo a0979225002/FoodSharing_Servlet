@@ -29,7 +29,7 @@ public class getTransactionRatio extends HttpServlet {
                     " and fht.comment is not null" +
                     " and fht.takeornot =?";
 
-            int count = template.queryForInt(sql,userid,1);
+            int count = template.queryForObject(sql,new BeanPropertyRowMapper<>(Integer.class),userid,1);
 
             out.println(count);
 
