@@ -32,7 +32,7 @@ public class Sql_getUser extends HttpServlet {
 
             sql = "select * from user where account = ?";
 
-            User_main table =   template.queryForObject(sql,new BeanPropertyRowMapper<>(User_main.class),account);
+            User_main table = template.queryForObject(sql,new BeanPropertyRowMapper<>(User_main.class),account);
 
             String passwd = table.getPassword();//拿取該帳號的sql加密驗證碼
             verify = MD5Utils.md5_verify(password,MD5Utils.md5key,passwd);
