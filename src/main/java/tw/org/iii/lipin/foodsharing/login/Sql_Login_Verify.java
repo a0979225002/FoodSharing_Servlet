@@ -34,10 +34,12 @@ public class Sql_Login_Verify extends HttpServlet {
             passwd = table.getPassword();//拿取該帳號的sql加密驗證碼
 
             verify = MD5Utils.md5_verify(password,MD5Utils.md5key,passwd);
-        }catch (Exception e){
 
+            System.out.println(password+"測試"+MD5Utils.md5key+passwd);
+        }catch (Exception e){
+            System.out.println("Sql_Login_Verify"+e.toString());
         }
-        System.out.println(verify);
+
         //驗證加密是否與原密碼一樣
         if (verify == true){
             try {

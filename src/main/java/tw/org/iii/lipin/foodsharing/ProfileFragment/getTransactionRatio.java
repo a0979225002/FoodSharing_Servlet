@@ -33,7 +33,6 @@ public class getTransactionRatio extends HttpServlet {
 
             out.println(count);
 
-
         }catch (Exception e){
             System.out.println("getTransactionRatio:"+e.toString());
         }
